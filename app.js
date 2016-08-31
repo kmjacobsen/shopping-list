@@ -1,6 +1,5 @@
 $(document).ready(function () {
-  $('#js-shopping-list-form').submit(function() {
-    //ask what is the function of this?
+  $('#js-shopping-list-form').submit(function(event) {
     event.preventDefault();
     //append all html elements that show up for each list item in the ul
     $('.shopping-list').append(
@@ -18,7 +17,6 @@ $(document).ready(function () {
       '</li>'
     ); //pairs with shopping list append function
 
-    //clears the input form...but why use this versus the class?
     $(this)[0].reset();
   }); //pairs with shopping list submit function
 
@@ -28,7 +26,7 @@ $(document).ready(function () {
 
 
   $('.shopping-list').on('click', '.shopping-item-toggle', function(event) {
-    $(this).closest('li').find('.shopping-item').toggleClass('shopping-item_checked');
+    $(this).parent().siblings().toggleClass('shopping-item_checked');
   });
 
 }); //pairs with document ready function
