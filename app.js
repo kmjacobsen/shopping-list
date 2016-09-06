@@ -29,4 +29,4 @@ $(document).ready(function () {
     $(this).parent().siblings().toggleClass('shopping-item_checked');
   });
 
-}); //pairs with document ready function
+}); //pairs with document ready function  
